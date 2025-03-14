@@ -1,6 +1,0 @@
-@media screen and (min-width: 736px) {
-    .win-screen div {
-        flex-direction: row;
-        gap: 40px;
-    }
-}
