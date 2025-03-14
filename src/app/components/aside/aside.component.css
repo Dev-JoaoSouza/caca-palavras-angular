@@ -1,0 +1,45 @@
+p {
+    font-size: 1.5rem;
+    font-weight: bolder;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+span {
+    font-size: 0.8rem;
+    text-transform: capitalize;
+    color: #fff;
+    cursor: pointer;
+}
+
+h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    text-transform: capitalize;
+    color: #fff;
+}
+
+ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+ul li {
+    font-size: 1.15rem;
+    text-transform: capitalize;
+    color: #fff;
+    list-style-type: disc;
+    list-style-position: inside;
+    padding: 0 0 0 10px;
+}
+
+ul li:first-of-type {
+    list-style-type: none;
+}
+
+.found {
+    text-decoration: line-through;
+    text-decoration-thickness: 2px;
+}

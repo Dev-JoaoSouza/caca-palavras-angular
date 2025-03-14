@@ -1,27 +1,58 @@
-# CacaPalavrasAngular
+# Caça-Palavras
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.2.
+## Descrição
 
-## Development server
+Este é um projeto de um jogo de Caça-Palavras com temática de frutas. O objetivo do jogo é encontrar todas as palavras escondidas no tabuleiro.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+O jogo é composto por 5 fases, cada uma contendo um conjunto único de palavras que não se repetem. Após concluir uma fase, o jogador pode optar por repetir a fase já concluída, onde as palavras serão reposicionadas aleatoriamente, ou avançar para a próxima fase com um novo conjunto de palavras.
 
-## Code scaffolding
+### Como jogar
+- Para selecionar uma palavra, clique nas letras na ordem correta.
+- Se clicar em uma letra errada, utilize o botão "Apagar" para limpar sua seleção.
+- Quando encontrar uma palavra corretamente, a seleção mudará de vermelho para verde, indicando que foi encontrada.
+- No campo "Fruta", onde estão listadas as palavras a serem encontradas, as palavras já identificadas ficarão riscadas.
+- Se o jogador tiver duvidas sobre o jogo, basta clicar em "Instruções" e uma caixa de texto irá descer com as principais instruções do jogo, para fecha-la basta clicar no "X", situado no canto superior direito da caixa.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Tecnologias utilizadas
+- **Angular com TypeScript**: para uma estrutura modular e tipagem segura.
+- **Angular CLI**: para facilitar a configuração e gerenciamento do projeto.
+- **Angular Services e Components**: para estruturação organizada e reutilizável do código.
 
-## Build
+O projeto segue o conceito de **mobile first**, garantindo uma experiência responsiva e acessível para dispositivos móveis.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Scripts disponíveis:
 
-## Running unit tests
+No diretório do projeto, é possível executar os seguintes scripts:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+#### `npm install`
 
-## Running end-to-end tests
+Instala todas as dependências do projeto.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+#### `ng serve`
 
-## Further help
+Executa o aplicativo no modo de desenvolvimento. Abra [http://localhost:4200](http://localhost:4200) para visualizá-lo no seu navegador. A página será recarregada quando você fizer alterações. É possível ver erros de lint no console.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+#### `ng build`
+
+Cria o aplicativo para produção na pasta `dist/`. A compilação é minificada e a aplicação fica pronta para ser implantado!
+
+#### Mais ajuda
+
+Para obter ajuda sobre o Angular CLI, use `ng help` ou confira a página [Visão geral e referência de comandos do Angular CLI](https://angular.io/cli).
+
+## Possíveis melhorias
+
+- Melhorar o design para torná-lo mais temático e atrativo.
+- Adicionar um painel de seleção inicial para diferentes categorias de palavras.
+- Implementar um sistema de pontuação.
+- Adicionar um cronômetro para registrar o tempo que o jogador leva para completar cada fase.
+
+## Design do projeto no Desktop:
+![image](./src/assets/desktop.png)
+
+## Design do projeto no Mobile:
+![image](./src/assets/mobile.png)
+
+---
+
+Este projeto é uma ótima forma de testar suas habilidades de observação e se divertir encontrando diversas frutas escondidas no tabuleiro!

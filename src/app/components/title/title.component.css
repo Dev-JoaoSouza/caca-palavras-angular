@@ -1,0 +1,9 @@
+h1 {
+    width: 100%;
+    text-align: center;
+    font-family: "Mr Dafoe", serif;
+    font-size: 3rem;
+    color: #fff;
+    text-shadow: 0px 0px 6px #164D00;
+    margin: 5px 0 10px;
+}

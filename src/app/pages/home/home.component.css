@@ -1,0 +1,27 @@
+main {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+main app-title {
+    width: 100%;
+}
+
+main section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+main app-aside {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 0px 5px;
+}

@@ -1,1 +1,30 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-weight: normal;
+    outline: none;
+    border: none;
+    font-family: "Open Sans", serif;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(45deg, #008348, #097921, #44e400);
+    background-size: 400% 400%;
+    animation: moveBackground 5s infinite linear alternate;
+}
+
+@keyframes moveBackground {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}

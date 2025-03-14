@@ -1,0 +1,7 @@
+<p>fase {{service.cacaPalavras.stageNumber}} - {{service.cacaPalavras.palavras.length}}</p>
+<span (click)="this.service.show()">instruções <fa-icon [icon]=icon></fa-icon></span>
+<h2>frutas:</h2>
+<ul>
+    <li *ngFor="let word of this.service.cacaPalavras.palavras[this.service.cacaPalavras.stageNumber - 1]; let i = index" [ngClass]="this.service.foundWords[i]">{{word}}</li>
+</ul>
+<app-button nameBtn="Apagar" (click)="this.service.erased()"></app-button>

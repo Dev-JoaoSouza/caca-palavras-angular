@@ -1,0 +1,10 @@
+<div class="win-screen">
+    <h2>🎊Parabéns🎊</h2>
+    <p *ngIf="!this.service.final">Você completou este estágio!</p>
+    <p *ngIf="this.service.final">🎉🎉Você completou todos os estágios!🎊🎊</p>
+    <div>
+        <app-button nameBtn="Reiniciar" (click)="this.service.restart()"></app-button>
+        <app-button nameBtn="Próximo" (click)="this.service.next()" *ngIf="!this.service.final"></app-button>
+        <app-button nameBtn="Reiniciar o Jogo" (click)="this.service.next()" *ngIf="this.service.final"></app-button>
+    </div>
+</div>

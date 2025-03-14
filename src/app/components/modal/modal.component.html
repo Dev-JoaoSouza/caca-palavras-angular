@@ -1,0 +1,9 @@
+<div [ngClass]="this.service.intructions">
+    <h2>Instruções <fa-icon [icon]=icon (click) = "this.service.hide()" ></fa-icon></h2>
+    <ol>
+        <li>As palavras são orientadas na vertical ou na horizontal;</li>
+        <li>Para selecionar a palavra basta clicar em cada letra seguindo a sua ordem;</li>
+        <li>Ao selecionar uma letra que não corresponde a palavra basta clicar no botão de apagar para limpar toda a seleção;</li>
+        <li>Ao achar uma palavra a sua seleção fica da cor verde e a palavra correspondente é riscada no campo frutas.</li>
+    </ol>
+</div>

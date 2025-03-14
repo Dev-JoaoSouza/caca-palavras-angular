@@ -1,0 +1,42 @@
+div {
+    position: fixed;
+    top: 5%;
+    left: 50%;
+    width: 300px;
+    min-height: 200px;
+    background-color: #ddd;
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+    transform: translateX(-50%) translateY(-450px);
+    transition: transform 1s;
+    border-radius: 20px;
+}
+
+div h2 {
+    text-align: center;
+    border-bottom: 1px solid #000;
+    position: relative;
+}
+
+div h2 fa-icon {
+    position: absolute;
+    top: 0px;
+    right: 7px;
+    cursor: pointer;
+}
+
+div ol li {
+    list-style-type: decimal;
+    list-style-position: inside;
+    padding: 0px 10px 10px 10px;
+    text-align: justify;
+}
+
+.open {
+    transform: translateX(-50%) translateY(0px);
+}
+
+.closed {
+    transform: translateX(-50%) translateY(-450px);
+}
