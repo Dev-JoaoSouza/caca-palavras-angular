@@ -19,11 +19,7 @@ export class GameService {
   }
 
   createFoundWords(value: number): string[] {
-    const found = [];
-
-    for(let i = 0; i < value; i++) {
-      found.push("noFound");
-    }
+    const found = Array(value).fill(false);
 
     return found;
   }
@@ -33,7 +29,7 @@ export class GameService {
   }
 
   hide() {
-    this.intructions = "closed"
+    this.intructions = "closed";
   }
 
   newTable(valor: number): string[][] {
@@ -51,32 +47,71 @@ export class GameService {
     return table;
   }
 
+  checkFullWord(word: string): boolean {
+    const tabuleiro = [ ...this.cacaPalavras.tabuleiro];
+    const tamanho = this.cacaPalavras.tamanho;
+
+    for (let j = 0; j < tamanho; j++) {
+      for (let i = 0; i < tamanho; i++) {
+
+        if (this.table[i][j] === "1" || this.table[i][j] === "2") {
+          let wordVertical = 0;
+          let wordHorizontal = 0;
+
+          for (let x = i; x < (i + word.length); x++) {
+            if ((x < 10) && ((this.table[x][j] === "1") || (this.table[x][j] === "2")) && (tabuleiro[x][j] === word[x - i])) {
+              wordVertical++
+            } else {
+              break;
+            }
+          }
+
+          for (let y = j; y < (j + word.length); y++) {
+            if ((y < 10) && ((this.table[i][y] === "1") || (this.table[i][y] === "2")) && (tabuleiro[i][y] === word[y - j])) {
+              wordHorizontal++;
+            } else {
+              break;
+            }
+          }
+
+          if ((wordVertical === word.length) || (wordHorizontal === word.length)) {
+            return true;
+          }
+
+        }
+      }
+    }
+    return false;
+  }
+
   checkWords() {
     const word = this.word;
-    const list = this.cacaPalavras.palavras[this.cacaPalavras.stageNumber - 1];
+    const list = [ ...this.cacaPalavras.palavras[this.cacaPalavras.stageNumber - 1]];
     const tamanho = this.cacaPalavras.tamanho;
 
     for(let i = 0; i < list.length; i++) {
       if (list[i] === word) {
+        if (this.checkFullWord(word)) {
 
-        for (let y = 0; y < tamanho; y++) {
-          for(let x = 0; x < tamanho; x++) {
-            if (this.table[x][y] === "1") {
-              this.table[x][y] = "2";
+          for (let y = 0; y < tamanho; y++) {
+            for(let x = 0; x < tamanho; x++) {
+              if (this.table[x][y] === "1") {
+                this.table[x][y] = "2";
+              }
             }
           }
-        }
 
-        this.foundWords[i] = "found";
-        this.word = "";
-        this.winner++;
-        break;
+          this.foundWords[i] = "found";
+          this.word = "";
+          this.winner++;
+          break;
+        }
       }
     }
   }
 
   paintCell(i: number, j: number) {
-    const tabuleiro = this.cacaPalavras.tabuleiro;
+    const tabuleiro = [ ...this.cacaPalavras.tabuleiro];
 
     if (this.table[j][i] === "0") {
       this.table[j][i] = "1";
@@ -103,7 +138,7 @@ export class GameService {
   }
 
   isWinner() {
-    const palavras = this.cacaPalavras.palavras[this.cacaPalavras.stageNumber - 1];
+    const palavras = [ ...this.cacaPalavras.palavras[this.cacaPalavras.stageNumber - 1]];
     
     if(this.winner === palavras.length) {
       if(this.cacaPalavras.stageNumber === this.cacaPalavras.palavras.length) {
